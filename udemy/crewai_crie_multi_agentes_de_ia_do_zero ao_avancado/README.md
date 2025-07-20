@@ -22,21 +22,22 @@ Este repositório contém os projetos desenvolvidos durante o curso **"CrewAI: C
 
 ```
 crewai_crie_multi_agentes_de_ia_do_zero_ao_avancado/
-├── README.md
-├── requirements.txt
-├── .env.example
-├── projetos/
-│   ├── projeto_01_basico/
-│   ├── projeto_02_intermediario/
-│   ├── projeto_03_avancado/
-│   └── projeto_final/
-├── exemplos/
-│   ├── agentes_simples/
-│   ├── coordenacao_agentes/
-│   └── casos_uso_reais/
-└── docs/
-    ├── conceitos/
-    └── referencias/
+├── README.md                    # Este arquivo
+├── requirements.txt             # Dependências do projeto
+├── .gitignore                  # Arquivos ignorados pelo Git
+├── env.example                 # Exemplo de variáveis de ambiente
+├── projetos/                   # Projetos desenvolvidos no curso
+│   ├── projeto_01_basico/     # Primeiro projeto - Introdução
+│   ├── projeto_02_intermediario/ # Segundo projeto - Múltiplos agentes
+│   ├── projeto_03_avancado/   # Terceiro projeto - Sistemas avançados
+│   └── projeto_final/         # Projeto final - Aplicação completa
+├── exemplos/                   # Exemplos práticos
+│   ├── agentes_simples/       # Exemplos de agentes básicos
+│   ├── coordenacao_agentes/   # Exemplos de coordenação
+│   └── casos_uso_reais/       # Casos de uso práticos
+└── docs/                      # Documentação
+    ├── conceitos/             # Conceitos teóricos
+    └── referencias/           # Referências e links úteis
 ```
 
 ## 🛠️ Tecnologias Utilizadas
@@ -77,7 +78,7 @@ pip install -r requirements.txt
 
 4. **Configure as variáveis de ambiente:**
 ```bash
-cp .env.example .env
+cp env.example .env
 # Edite o arquivo .env com suas chaves de API
 ```
 
@@ -127,31 +128,58 @@ cp .env.example .env
 
 ### Variáveis de Ambiente
 
-Crie um arquivo `.env` na raiz do projeto:
+Crie um arquivo `.env` na raiz do projeto baseado no `env.example`:
 
 ```env
-# OpenAI API
-OPENAI_API_KEY=sua_chave_api_aqui
+# OpenAI API Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4
+OPENAI_TEMPERATURE=0.7
 
-# Outras APIs (se necessário)
-ANTHROPIC_API_KEY=sua_chave_anthropic
-GOOGLE_API_KEY=sua_chave_google
+# Anthropic API (opcional)
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
 
-# Configurações do projeto
+# Google API (opcional)
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Configurações do Projeto
 DEBUG=True
 LOG_LEVEL=INFO
+
+# Configurações do CrewAI
+CREWAI_VERBOSE=True
+CREWAI_MEMORY=True
 ```
 
 ### Dependências Principais
 
 ```txt
-crewai
-openai
-langchain
-python-dotenv
-fastapi
-streamlit
-pydantic
+# CrewAI e dependências principais
+crewai>=0.28.0
+openai>=1.0.0
+langchain>=0.1.0
+langchain-openai>=0.1.0
+
+# Utilitários
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+requests>=2.31.0
+
+# APIs e interfaces (opcionais)
+fastapi>=0.104.0
+streamlit>=1.28.0
+uvicorn>=0.24.0
+
+# Ferramentas de desenvolvimento
+jupyter>=1.0.0
+ipython>=8.0.0
+
+# Análise de dados (quando necessário)
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Logging e debugging
+loguru>=0.7.0
 ```
 
 ## 📝 Exemplos de Uso
@@ -180,6 +208,58 @@ crew = Crew(
 )
 
 # Executar
+result = crew.kickoff()
+```
+
+### Múltiplos Agentes
+```python
+from crewai import Agent, Task, Crew
+
+# Agente pesquisador
+researcher = Agent(
+    role='Pesquisador',
+    goal='Coletar informações detalhadas sobre o tópico',
+    backstory='Especialista em pesquisa com vasta experiência'
+)
+
+# Agente escritor
+writer = Agent(
+    role='Escritor',
+    goal='Criar conteúdo baseado nas pesquisas',
+    backstory='Escritor profissional especializado em conteúdo técnico'
+)
+
+# Agente revisor
+reviewer = Agent(
+    role='Revisor',
+    goal='Revisar e melhorar o conteúdo criado',
+    backstory='Editor experiente com olho crítico para qualidade'
+)
+
+# Tarefas
+research_task = Task(
+    description='Pesquisar sobre as últimas tendências em IA',
+    agent=researcher
+)
+
+writing_task = Task(
+    description='Escrever um artigo baseado na pesquisa',
+    agent=writer,
+    context=[research_task]
+)
+
+review_task = Task(
+    description='Revisar e melhorar o artigo',
+    agent=reviewer,
+    context=[writing_task]
+)
+
+# Crew com múltiplos agentes
+crew = Crew(
+    agents=[researcher, writer, reviewer],
+    tasks=[research_task, writing_task, review_task]
+)
+
 result = crew.kickoff()
 ```
 
@@ -217,14 +297,38 @@ Este projeto é para fins educacionais. Consulte a licença do curso original pa
 
 ## 🎓 Progresso do Curso
 
+### ✅ Concluído
+- [x] Configuração inicial do ambiente
+- [x] Criação da estrutura do projeto
+- [x] Documentação básica
+
+### 🔄 Em Andamento
 - [ ] Módulo 1: Introdução ao CrewAI
 - [ ] Módulo 2: Agentes Básicos
 - [ ] Módulo 3: Múltiplos Agentes
 - [ ] Módulo 4: Sistemas Avançados
 - [ ] Módulo 5: Projeto Final
 
-**Status:** Em andamento ⏳
+### 📊 Estatísticas
+- **Projetos Concluídos:** 0/4
+- **Módulos Concluídos:** 0/5
+- **Status Geral:** Em andamento ⏳
 
 ---
 
-*Última atualização: [Data]* 
+## 🚀 Próximos Passos
+
+1. **Instalar dependências:** `pip install -r requirements.txt`
+2. **Configurar variáveis de ambiente:** Copiar `env.example` para `.env`
+3. **Começar o primeiro projeto:** Navegar para `projetos/projeto_01_basico/`
+4. **Seguir o curso:** Implementar cada projeto conforme o progresso
+
+## 📞 Suporte
+
+- **Issues:** Use as issues do GitHub para reportar problemas
+- **Discord:** [CrewAI Community](https://discord.gg/crewai)
+- **Documentação:** [CrewAI Docs](https://docs.crewai.com/)
+
+---
+
+*Última atualização: Dezembro 2024* 
