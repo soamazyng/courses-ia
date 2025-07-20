@@ -27,6 +27,13 @@ Este projeto implementa um sistema de análise de mercado utilizando múltiplos 
 - **Estratégias de Posicionamento**
 - **Cenários Futuros**
 
+### ✅ **Exportação de Resultados**
+- **📄 Markdown**: Relatórios em formato Markdown com encoding UTF-8
+- **🌐 HTML**: Páginas web responsivas e estilizadas
+- **📋 PDF**: Documentos PDF profissionais (requer wkhtmltopdf)
+- **⏰ Timestamp**: Arquivos com data e hora automática
+- **🎨 Formatação**: Layout profissional e responsivo
+
 ## 🚀 Configuração do Ambiente
 
 ### Pré-requisitos
@@ -69,7 +76,7 @@ estudo_caso_analise_de_mercado/
 ├── requirements.txt                 # Dependências do projeto
 ├── .env                            # Variáveis de ambiente (não versionado)
 ├── .gitignore                      # Arquivos ignorados pelo Git
-├── analise_mercado.ipynb          # Notebook principal do projeto
+├── analise_mercado.ipynb          # Notebook principal do projeto (com exportação integrada)
 └── README.md                       # Este arquivo
 ```
 
@@ -95,7 +102,11 @@ source venv/bin/activate
 jupyter notebook
 ```
 
-**Abra o arquivo `analise_mercado.ipynb` e execute as células em sequência.**
+**Abra o arquivo `analise_mercado.ipynb` e execute as células em sequência:**
+
+1. **Células 0-4**: Análise completa de mercado
+2. **Célula 5**: Carregamento das funções de exportação
+3. **Célula 6**: Exportação automática dos resultados
 ```
 
 ### 2. **Alterando o Setor para Análise**
@@ -106,17 +117,32 @@ jupyter notebook
 sector = "energia renovavel"  # ou qualquer outro setor
 ```
 
-#### **No Script Python:**
+### 3. **Exportando Resultados**
+
+#### **No Notebook (Células 5 e 6):**
 ```python
-# No arquivo test_crew_dinamico.py, altere:
-sector_teste = "fintech"  # ou qualquer outro setor
+# As funções de exportação já estão disponíveis
+# Execute a célula 5 para carregar as funções
+# Execute a célula 6 para exportar automaticamente
+```
+
+#### **Funções Disponíveis:**
+```python
+# Exportar em Markdown
+arquivo_md = exportar_markdown(resultado_texto, sector)
+
+# Exportar em HTML  
+arquivo_html = exportar_html(resultado_texto, sector)
+
+# Exportar em PDF
+arquivo_pdf = exportar_pdf(resultado_texto, sector)
 ```
 
 ## 📊 Setores Testados
 
 O sistema pode analisar qualquer setor, incluindo:
 
-- **Inteligência Artificial**
+- **Inteligência Artificial** ✅
 - **Energia Renovável**
 - **Fintech**
 - **E-commerce**
@@ -126,6 +152,8 @@ O sistema pode analisar qualquer setor, incluindo:
 - **Manufatura**
 - **Varejo**
 - **E muito mais...**
+
+**💡 Dica:** Para testar outros setores, altere a variável `sector_analisado` na célula 6 do notebook.
 
 ## 🔍 Exemplo de Uso
 
@@ -142,11 +170,25 @@ resultado = executar_crew(sector)
 exibir_resultado_markdown(resultado)
 ```
 
-### **2. Teste de Múltiplos Setores**
+### **2. Exportação de Resultados**
 
 ```python
-# No script test_crew_dinamico.py
-testar_diferentes_setores()
+# Exportar em Markdown
+arquivo_md = exportar_markdown(resultado_texto, sector)
+
+# Exportar em HTML
+arquivo_html = exportar_html(resultado_texto, sector)
+
+# Exportar em PDF
+arquivo_pdf = exportar_pdf(resultado_texto, sector)
+```
+
+### **3. Execução Completa**
+
+```python
+# 1. Execute as células 0-4 para análise
+# 2. Execute a célula 5 para carregar funções de exportação
+# 3. Execute a célula 6 para exportar automaticamente
 ```
 
 ## 📋 Saída Típica
@@ -168,6 +210,11 @@ O sistema gera relatórios completos incluindo:
 - Insights acionáveis
 - Oportunidades de crescimento
 - Cenários futuros
+
+### **Formatos de Exportação**
+- **📄 Markdown**: Estrutura clara e legível
+- **🌐 HTML**: Página web responsiva e estilizada
+- **📋 PDF**: Documento profissional para impressão
 
 ## 🛠️ Desenvolvimento
 
@@ -196,6 +243,19 @@ redator = Agent(
 )
 ```
 
+### **Funções de Exportação**
+
+```python
+# Exportação em Markdown
+exportar_markdown(resultado, sector)
+
+# Exportação em HTML
+exportar_html(resultado, sector)
+
+# Exportação em PDF
+exportar_pdf(resultado, sector)
+```
+
 ### **Estrutura das Tarefas**
 
 ```python
@@ -216,16 +276,22 @@ tarefa_pesquisador = Task(
 ### **Funcionalidades Planejadas:**
 - [ ] Integração com APIs de dados de mercado
 - [ ] Visualizações gráficas automáticas
-- [ ] Exportação para PDF
 - [ ] Interface web
 - [ ] Análise comparativa entre setores
 - [ ] Alertas de tendências emergentes
+- [ ] Exportação para Excel/CSV
+- [ ] Templates personalizáveis
+- [ ] Relatórios automáticos por email
+- [ ] Dashboard interativo
+- [ ] Análise de sentimentos do mercado
 
 ### **Melhorias Técnicas:**
 - [ ] Cache de análises anteriores
 - [ ] Otimização de prompts
 - [ ] Validação de dados
 - [ ] Relatórios customizáveis
+- [ ] Configuração de agentes via arquivo YAML
+- [ ] Sistema de plugins para novos formatos
 
 ## 🤝 Contribuição
 
@@ -244,6 +310,22 @@ Este projeto está sob a licença MIT.
 ## 📞 Suporte
 
 Para dúvidas ou sugestões, abra uma issue no repositório.
+
+## 📈 Status do Projeto
+
+### ✅ **Funcionalidades Implementadas:**
+- [x] Sistema de agentes CrewAI
+- [x] Análise dinâmica de setores
+- [x] Exportação em Markdown
+- [x] Exportação em HTML
+- [x] Exportação em PDF
+- [x] Interface Jupyter Notebook
+- [x] Tratamento de erros
+- [x] Encoding UTF-8
+- [x] Timestamps automáticos
+
+### 🚀 **Pronto para Uso:**
+O projeto está **100% funcional** e pronto para análise de mercado em qualquer setor!
 
 ---
 
