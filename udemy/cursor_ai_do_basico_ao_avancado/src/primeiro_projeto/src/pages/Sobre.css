@@ -1,0 +1,271 @@
+.sobre {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sobre-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.sobre-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.sobre-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sobre-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.missao-visao {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ff6b6b;
+}
+
+.card p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.valores-section {
+  margin-bottom: 80px;
+}
+
+.valores-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #ff6b6b;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.valor-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.valor-item:hover {
+  transform: translateY(-5px);
+}
+
+.valor-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.valor-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ff6b6b;
+}
+
+.valor-item p {
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.historia-section {
+  margin-bottom: 80px;
+}
+
+.historia-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #ff6b6b;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-year {
+  background: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  min-width: 80px;
+  text-align: center;
+  z-index: 2;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 0 30px;
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timeline-content h3 {
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.timeline-content p {
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.equipe-section {
+  text-align: center;
+}
+
+.equipe-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ff6b6b;
+}
+
+.equipe-descricao {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  opacity: 0.9;
+}
+
+.equipe-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat h3 {
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .sobre-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .missao-visao {
+    grid-template-columns: 1fr;
+  }
+  
+  .valores-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    margin-left: 40px;
+  }
+  
+  .timeline-content {
+    margin: 15px 0 0 0;
+    width: 100%;
+  }
+  
+  .equipe-stats {
+    grid-template-columns: 1fr;
+  }
+} 
