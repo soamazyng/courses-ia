@@ -1,12 +1,13 @@
 # Primeiro Projeto - React + Vite
 
-Um projeto React moderno construído com Vite, incluindo roteamento, componentes reutilizáveis e configuração Docker para desenvolvimento e produção.
+Um projeto React moderno construído com Vite, incluindo roteamento, componentes reutilizáveis, seção de blog e configuração Docker para desenvolvimento e produção.
 
 ## 🚀 Tecnologias Utilizadas
 
 - **React 19** - Biblioteca JavaScript para interfaces
 - **Vite** - Build tool rápida e moderna
 - **React Router DOM** - Roteamento para SPA
+- **React Bootstrap** - Framework CSS para componentes React
 - **ESLint** - Linting e formatação de código
 - **Docker** - Containerização para desenvolvimento e produção
 
@@ -17,11 +18,16 @@ primeiro_projeto/
 ├── src/
 │   ├── components/          # Componentes reutilizáveis
 │   │   ├── Navbar.jsx      # Navegação principal
-│   │   └── HTMLComponents.js
+│   │   └── Home/           # Componentes específicos da Home
+│   │       └── BlogNews.jsx # Componente de notícias do blog
 │   ├── pages/              # Páginas da aplicação
 │   │   ├── Home.jsx        # Página inicial
 │   │   ├── Sobre.jsx       # Página sobre
-│   │   └── Contato.jsx     # Página de contato
+│   │   ├── Contato.jsx     # Página de contato
+│   │   ├── DesenvolvimentoWeb.jsx
+│   │   ├── AplicacoesMobile.jsx
+│   │   ├── SistemasEmpresariais.jsx
+│   │   └── ConsultoriaTI.jsx
 │   ├── data/               # Dados estáticos
 │   │   ├── homeData.js
 │   │   ├── sobreData.js
@@ -64,6 +70,13 @@ npm run dev          # Inicia servidor de desenvolvimento
 npm run build        # Constrói para produção
 npm run preview      # Visualiza build de produção
 npm run lint         # Executa ESLint
+npm test             # Executa testes em modo watch
+npm run test:run     # Executa todos os testes
+npm run test:ui      # Executa testes com interface gráfica
+npm run test:coverage # Executa testes com relatório de cobertura
+npm run mutation     # Executa testes de mutação
+npm run mutation:html # Executa testes de mutação com relatório HTML
+npm run mutation:open # Abre o relatório HTML no navegador
 ```
 
 ## 🐳 Docker
@@ -90,14 +103,37 @@ Para mais detalhes sobre Docker, consulte o [README-Docker.md](./README-Docker.m
 ## 📄 Páginas e Funcionalidades
 
 ### 🏠 Página Inicial (Home)
-- Apresentação do projeto
-- Navegação principal
-- Design responsivo
+- Apresentação da empresa Nova Código
+- Seção de serviços principais
+- Estatísticas da empresa
+- Seção de features/benefícios
+- **Nova seção de blog** com últimas notícias
+- Design responsivo e moderno
+
+### 💻 Página Desenvolvimento Web
+- Serviços de desenvolvimento web
+- Tecnologias utilizadas
+- Portfólio de projetos
+
+### 📱 Página Aplicações Mobile
+- Serviços de desenvolvimento mobile
+- Tecnologias nativas e híbridas
+- Cases de sucesso
+
+### ⚡ Página Sistemas Empresariais
+- Soluções empresariais
+- Sistemas personalizados
+- Tecnologias enterprise
+
+### 🏢 Página Consultoria em TI
+- Serviços de consultoria
+- Arquitetura de soluções
+- Planejamento tecnológico
 
 ### ℹ️ Página Sobre
-- Informações sobre o projeto
-- Tecnologias utilizadas
-- Objetivos
+- Informações sobre a empresa
+- Missão, visão e valores
+- Equipe e experiência
 
 ### 📞 Página Contato
 - Formulário de contato
@@ -110,18 +146,66 @@ Para mais detalhes sobre Docker, consulte o [README-Docker.md](./README-Docker.m
 - Navegação responsiva
 - Links para todas as páginas
 - Design moderno e limpo
+- Logo da empresa
 
-### HTMLComponents
-- Componentes reutilizáveis
-- Estrutura modular
-- Fácil manutenção
+### BlogNews (Novo)
+- **Localização**: `src/components/Home/BlogNews.jsx`
+- **Estilização**: `src/components/Home/BlogNews.css`
+- **Funcionalidades**:
+  - Exibe as últimas notícias do blog
+  - Cards responsivos com imagens
+  - Informações completas (autor, data, tempo de leitura)
+  - Tags categorizadas
+  - Efeitos hover e animações
+  - Design moderno e acessível
+- **Dados**: Inclui 3 notícias de exemplo sobre tecnologia
+- **Integração**: Adicionado na página Home após a seção de estatísticas
 
 ## 📊 Dados
 
 O projeto utiliza dados estáticos organizados em:
-- `homeData.js` - Dados da página inicial
+- `homeData.js` - Dados da página inicial (hero, stats, features)
 - `sobreData.js` - Dados da página sobre
 - `contatoData.js` - Dados da página de contato
+
+### Estrutura de Dados
+Os dados são estruturados de forma modular e reutilizável, facilitando a manutenção e atualização do conteúdo.
+
+## 🧪 Testes
+
+### Estrutura de Testes
+```
+src/
+├── __tests__/           # Testes do App principal
+├── components/
+│   ├── __tests__/      # Testes dos componentes
+│   └── Home/
+│       └── __tests__/  # Testes dos componentes da Home
+└── pages/
+    └── __tests__/      # Testes das páginas
+```
+
+### Componentes Testados
+- **App**: Testes de renderização e estrutura principal
+- **Navbar**: Testes de navegação e elementos
+- **BlogNews**: Testes completos do componente de blog
+- **Home**: Testes da página inicial e seus elementos
+
+### Cobertura de Testes
+- ✅ 34 testes implementados
+- ✅ 100% dos componentes principais testados
+- ✅ Testes de renderização, elementos e funcionalidades
+- ✅ Testes responsivos e acessibilidade
+
+### Testes de Mutação
+- ✅ **Stryker** configurado e executado
+- ✅ **716 mutantes** gerados automaticamente
+- ✅ **Score de Mutação**: 11.23% (86 mutantes sobreviveram)
+- ✅ **Componentes Melhor Testados**:
+  - BlogNews.jsx: 75% de score de mutação
+  - Home.jsx: 42% de score de mutação
+- ✅ **Relatório HTML** gerado em `reports/mutation/html/index.html`
+- ✅ **Análise Detalhada** de mutantes sobreviventes e mortos
 
 ## 🔧 Configuração
 
@@ -130,6 +214,16 @@ Configurado com regras para React e boas práticas de desenvolvimento.
 
 ### Vite
 Configuração otimizada para desenvolvimento rápido e build eficiente.
+
+### React Bootstrap
+Framework CSS integrado para componentes responsivos e modernos.
+
+### Testes
+- **Vitest**: Framework de testes rápido e moderno
+- **React Testing Library**: Biblioteca para testar componentes React
+- **Jest DOM**: Matchers adicionais para DOM testing
+- **User Event**: Simulação de interações do usuário
+- **Stryker**: Framework de testes de mutação para qualidade de código
 
 ### Docker
 Multi-stage build otimizado para produção com Nginx.
@@ -152,6 +246,24 @@ npm run preview
 docker-compose up --build
 ```
 
+## 🚀 Funcionalidades Principais
+
+### ✨ Recursos Implementados
+- **Páginas Completas**: 7 páginas com conteúdo específico
+- **Navegação Responsiva**: Menu adaptável para diferentes dispositivos
+- **Componentes Modulares**: Estrutura organizada e reutilizável
+- **Seção de Blog**: Últimas notícias com design moderno
+- **Design Responsivo**: Adaptação para mobile, tablet e desktop
+- **Dados Dinâmicos**: Estrutura modular para fácil atualização
+- **Testes Unitários**: Cobertura completa de testes para componentes
+- **Testes de Mutação**: Análise de qualidade de código com Stryker
+
+### 🎯 Objetivos do Projeto
+- Demonstrar habilidades em React e desenvolvimento web
+- Criar uma aplicação completa e funcional
+- Implementar boas práticas de desenvolvimento
+- Utilizar tecnologias modernas e atuais
+
 ## 📝 Licença
 
 Este projeto é parte do curso "Cursor AI do Básico ao Avançado".
@@ -167,3 +279,7 @@ Este projeto é parte do curso "Cursor AI do Básico ao Avançado".
 ## 📞 Suporte
 
 Para dúvidas ou suporte, consulte a documentação do curso ou entre em contato através da página de contato da aplicação.
+
+---
+
+**Desenvolvido com ❤️ usando React, Vite e React Bootstrap**

@@ -1,7 +1,7 @@
 export const contatoData = {
   hero: {
     title: "Entre em Contato",
-    subtitle: "Estamos aqui para ajudar! Entre em contato conosco.",
+    subtitle: "Estamos aqui para ajudar! Entre em contato conosco para discutir seu projeto.",
   },
 
   infoItems: [
@@ -9,22 +9,22 @@ export const contatoData = {
       icon: "📍",
       title: "Endereço",
       content:
-        "Rua das Flores, 123<br />Centro - São Paulo, SP<br />CEP: 01234-567",
+        "Av. Paulista, 1000<br />Bela Vista - São Paulo, SP<br />CEP: 01310-100",
     },
     {
       icon: "📞",
       title: "Telefone",
-      content: "(11) 9999-9999<br />(11) 8888-8888",
+      content: "(11) 9999-8888<br />(11) 8888-7777",
     },
     {
       icon: "✉️",
       title: "Email",
-      content: "contato@empresa.com<br />suporte@empresa.com",
+      content: "contato@novacodigo.com.br<br />projetos@novacodigo.com.br",
     },
     {
       icon: "🕒",
       title: "Horário de Funcionamento",
-      content: "Segunda a Sexta: 8h às 18h<br />Sábado: 9h às 14h",
+      content: "Segunda a Sexta: 9h às 18h<br />Sábado: 9h às 13h",
     },
   ],
 
@@ -80,7 +80,7 @@ export const contatoData = {
 
   mapData: {
     title: "📍 São Paulo, SP",
-    description: "Estamos localizados no centro da cidade, próximo ao metrô.",
-    additionalInfo: "Fácil acesso por transporte público.",
+    description: "Nossa sede está localizada no coração de São Paulo, próximo ao metrô e com fácil acesso.",
+    additionalInfo: "Estacionamento disponível para clientes.",
   },
 };

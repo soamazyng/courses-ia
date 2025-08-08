@@ -1,0 +1,336 @@
+# Curso Amazon Bedrock Python - .gitignore
+
+# === CREDENCIAIS E CONFIGURAÇÕES SENSÍVEIS ===
+# NUNCA faça commit dessas informações!
+.env
+.env.*
+!.env.example
+
+# Arquivos de configuração AWS
+.aws/
+aws-config.json
+credentials.json
+config.json
+
+# Chaves e tokens
+*.key
+*.pem
+*.p12
+*.pfx
+api_keys.txt
+secrets.txt
+
+# === AMBIENTE VIRTUAL PYTHON ===
+# Diretórios de ambiente virtual
+curso_bedrock/
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# === ARQUIVOS PYTHON ===
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# celery beat schedule file
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# === LOGS E DADOS TEMPORÁRIOS ===
+# Logs
+*.log
+logs/
+log/
+*.log.*
+
+# Dados temporários
+temp/
+tmp/
+cache/
+.cache/
+
+# Arquivos de backup
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# === ARQUIVOS ESPECÍFICOS DO PROJETO ===
+# Arquivos de dados sensíveis
+user_data/
+customer_data/
+personal_info/
+
+# Arquivos de configuração de instabots
+config/instabot_*
+session.json
+
+# Arquivos de áudio/imagem temporários
+temp_audio/
+temp_images/
+generated_images/
+output_files/
+downloads/
+
+# Modelos baixados
+models/
+*.model
+*.pkl
+*.joblib
+
+# === IDEs E EDITORES ===
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Atom
+.atom/
+
+# === SISTEMA OPERACIONAL ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# === DOCKER ===
+# Docker
+.dockerignore
+Dockerfile.prod
+docker-compose.override.yml
+
+# === BANCO DE DADOS ===
+# Arquivos de banco de dados
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# === ARQUIVOS DE MÍDIA GRANDES ===
+# Vídeos
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.wmv
+*.flv
+*.webm
+
+# Áudios grandes
+*.wav
+*.flac
+*.aac
+*.m4a
+# Mantém apenas arquivos pequenos de exemplo
+!example*.mp3
+!sample*.wav
+
+# Imagens grandes (mantém pequenas para exemplos)
+*.tiff
+*.tif
+*.raw
+*.cr2
+*.nef
+# Mantém apenas imagens pequenas de exemplo
+!example*.jpg
+!sample*.png
+!icon*.png
+
+# === ARQUIVOS ESPECÍFICOS AWS/BEDROCK ===
+# Respostas e cache do Bedrock
+bedrock_cache/
+bedrock_responses/
+model_outputs/
+
+# Arquivos de configuração específicos
+bedrock_config.json
+model_config.yaml
+inference_config.yml
+
+# === NODE.JS (caso use ferramentas JS) ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === OUTROS ===
+# Arquivos compactados
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Certificados
+*.crt
+*.csr
+
+# Arquivos de configuração local
+local_config.json
+dev_settings.py
+test_config.py
+
+# Arquivos gerados
+generated/
+output/
+results/
+
+# === EXEMPLO DE ARQUIVO .env ===
+# Crie um arquivo .env.example com este conteúdo:
+# AWS_ACCESS_KEY_ID=sua_access_key_aqui
+# AWS_SECRET_ACCESS_KEY=sua_secret_key_aqui
+# AWS_DEFAULT_REGION=us-east-1
+# AWS_PROFILE=bedrock-curso
+# OPENAI_API_KEY=sua_openai_key_aqui

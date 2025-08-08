@@ -1,0 +1,7 @@
+openai
+python-dotenv
+pydub
+instabot
+Pillow
+boto3
+botocore
