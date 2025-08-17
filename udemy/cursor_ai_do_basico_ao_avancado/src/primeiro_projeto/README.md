@@ -1,285 +1,127 @@
-# Primeiro Projeto - React + Vite
+# 🚀 Nova Código - Projeto Simplificado
 
-Um projeto React moderno construído com Vite, incluindo roteamento, componentes reutilizáveis, seção de blog e configuração Docker para desenvolvimento e produção.
+## 📋 Descrição
 
-## 🚀 Tecnologias Utilizadas
+Site institucional da Nova Código, uma empresa de tecnologia especializada em desenvolvimento de software e soluções digitais. O projeto foi **simplificado** para focar no essencial, removendo complexidades desnecessárias.
 
-- **React 19** - Biblioteca JavaScript para interfaces
+## ✨ Funcionalidades Principais
+
+- **Página Home**: Apresentação da empresa, serviços principais e blog de notícias
+- **Página Sobre**: Missão, visão, valores e história da empresa
+- **Página Contato**: Formulário simples de contato e informações da empresa
+- **Dados Integrados**: Todo o conteúdo está diretamente nos componentes JSX
+- **Design Responsivo**: Funciona perfeitamente em qualquer dispositivo
+- **Componentes Reutilizáveis**: Estrutura modular e organizada
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React 18** - Biblioteca para interfaces de usuário
+- **React Bootstrap** - Componentes CSS responsivos
+- **React Router DOM** - Roteamento client-side
 - **Vite** - Build tool rápida e moderna
-- **React Router DOM** - Roteamento para SPA
-- **React Bootstrap** - Framework CSS para componentes React
-- **ESLint** - Linting e formatação de código
-- **Docker** - Containerização para desenvolvimento e produção
+- **ESLint** - Linting de código
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto (Ultra Simplificada)
 
 ```
-primeiro_projeto/
-├── src/
-│   ├── components/          # Componentes reutilizáveis
-│   │   ├── Navbar.jsx      # Navegação principal
-│   │   └── Home/           # Componentes específicos da Home
-│   │       └── BlogNews.jsx # Componente de notícias do blog
-│   ├── pages/              # Páginas da aplicação
-│   │   ├── Home.jsx        # Página inicial
-│   │   ├── Sobre.jsx       # Página sobre
-│   │   ├── Contato.jsx     # Página de contato
-│   │   ├── DesenvolvimentoWeb.jsx
-│   │   ├── AplicacoesMobile.jsx
-│   │   ├── SistemasEmpresariais.jsx
-│   │   └── ConsultoriaTI.jsx
-│   ├── data/               # Dados estáticos
-│   │   ├── homeData.js
-│   │   ├── sobreData.js
-│   │   └── contatoData.js
-│   ├── assets/             # Recursos estáticos
-│   └── App.jsx             # Componente principal
-├── public/                 # Arquivos públicos
-├── Dockerfile              # Configuração Docker
-├── docker-compose.yml      # Orquestração Docker
-└── README-Docker.md        # Documentação Docker
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Navbar.jsx      # Navegação principal
+│   └── Home/
+│       └── BlogNews.jsx # Componente de notícias do blog
+├── pages/              # Páginas da aplicação (com dados integrados)
+│   ├── Home.jsx        # Página inicial + dados
+│   ├── Sobre.jsx       # Sobre a empresa + dados
+│   └── Contato.jsx     # Formulário de contato + dados
+
+├── assets/             # Recursos estáticos
+├── App.jsx             # Componente principal
+└── main.jsx            # Ponto de entrada
 ```
 
-## 🛠️ Instalação e Desenvolvimento
+## 🎯 Páginas e Funcionalidades
+
+### 1. **Home** (`/`)
+- Banner principal com estatísticas da empresa
+- Seção de serviços principais (4 serviços)
+- Seção de recursos/diferenciais
+- Blog de notícias mais recentes
+- Botões de call-to-action
+
+### 2. **Sobre** (`/sobre`)
+- Missão e visão da empresa
+- Valores corporativos (6 valores)
+- Timeline da empresa (6 marcos)
+- Informações sobre a equipe
+
+### 3. **Contato** (`/contato`)
+- Formulário simples (nome, email, mensagem)
+- Informações de contato da empresa
+- Validação de formulário
+
+## 🔧 Configuração
 
 ### Pré-requisitos
 - Node.js 18+ 
 - npm ou yarn
-- Docker (opcional)
 
-### Desenvolvimento Local
-
+### Instalação
 ```bash
 # Clone o repositório
-git clone <url-do-repositorio>
+git clone [url-do-repositorio]
+
+# Entre na pasta
 cd primeiro_projeto
 
 # Instale as dependências
 npm install
 
-# Inicie o servidor de desenvolvimento
+# Execute em desenvolvimento
 npm run dev
 
-# Acesse http://localhost:5173
+# Build para produção
+npm run build
 ```
 
 ### Scripts Disponíveis
-
 ```bash
-npm run dev          # Inicia servidor de desenvolvimento
-npm run build        # Constrói para produção
-npm run preview      # Visualiza build de produção
+npm run dev          # Executa em modo desenvolvimento
+npm run build        # Gera build de produção
+npm run preview      # Preview do build
 npm run lint         # Executa ESLint
-npm test             # Executa testes em modo watch
-npm run test:run     # Executa todos os testes
-npm run test:ui      # Executa testes com interface gráfica
-npm run test:coverage # Executa testes com relatório de cobertura
-npm run mutation     # Executa testes de mutação
-npm run mutation:html # Executa testes de mutação com relatório HTML
-npm run mutation:open # Abre o relatório HTML no navegador
 ```
 
-## 🐳 Docker
+## 🎨 Design e UX
 
-O projeto está configurado com Docker para facilitar o desenvolvimento e deploy.
+- **Interface Limpa**: Design minimalista e focado
+- **Responsivo**: Funciona em todos os dispositivos
+- **Acessível**: Seguindo boas práticas de acessibilidade
+- **Performance**: Carregamento rápido e otimizado
 
-### Executar com Docker
+## 📱 Responsividade
 
-```bash
-# Usando Docker Compose (Recomendado)
-docker-compose up --build
-
-# Usando Docker diretamente
-docker build -t primeiro-projeto .
-docker run -p 3000:80 primeiro-projeto
-```
-
-### Acessar a Aplicação
-- **Desenvolvimento local**: http://localhost:5173
-- **Docker**: http://localhost:3000
-
-Para mais detalhes sobre Docker, consulte o [README-Docker.md](./README-Docker.md).
-
-## 📄 Páginas e Funcionalidades
-
-### 🏠 Página Inicial (Home)
-- Apresentação da empresa Nova Código
-- Seção de serviços principais
-- Estatísticas da empresa
-- Seção de features/benefícios
-- **Nova seção de blog** com últimas notícias
-- Design responsivo e moderno
-
-### 💻 Página Desenvolvimento Web
-- Serviços de desenvolvimento web
-- Tecnologias utilizadas
-- Portfólio de projetos
-
-### 📱 Página Aplicações Mobile
-- Serviços de desenvolvimento mobile
-- Tecnologias nativas e híbridas
-- Cases de sucesso
-
-### ⚡ Página Sistemas Empresariais
-- Soluções empresariais
-- Sistemas personalizados
-- Tecnologias enterprise
-
-### 🏢 Página Consultoria em TI
-- Serviços de consultoria
-- Arquitetura de soluções
-- Planejamento tecnológico
-
-### ℹ️ Página Sobre
-- Informações sobre a empresa
-- Missão, visão e valores
-- Equipe e experiência
-
-### 📞 Página Contato
-- Formulário de contato
-- Informações de contato
-- Integração com dados estáticos
-
-## 🎨 Componentes
-
-### Navbar
-- Navegação responsiva
-- Links para todas as páginas
-- Design moderno e limpo
-- Logo da empresa
-
-### BlogNews (Novo)
-- **Localização**: `src/components/Home/BlogNews.jsx`
-- **Estilização**: `src/components/Home/BlogNews.css`
-- **Funcionalidades**:
-  - Exibe as últimas notícias do blog
-  - Cards responsivos com imagens
-  - Informações completas (autor, data, tempo de leitura)
-  - Tags categorizadas
-  - Efeitos hover e animações
-  - Design moderno e acessível
-- **Dados**: Inclui 3 notícias de exemplo sobre tecnologia
-- **Integração**: Adicionado na página Home após a seção de estatísticas
-
-## 📊 Dados
-
-O projeto utiliza dados estáticos organizados em:
-- `homeData.js` - Dados da página inicial (hero, stats, features)
-- `sobreData.js` - Dados da página sobre
-- `contatoData.js` - Dados da página de contato
-
-### Estrutura de Dados
-Os dados são estruturados de forma modular e reutilizável, facilitando a manutenção e atualização do conteúdo.
-
-## 🧪 Testes
-
-### Estrutura de Testes
-```
-src/
-├── __tests__/           # Testes do App principal
-├── components/
-│   ├── __tests__/      # Testes dos componentes
-│   └── Home/
-│       └── __tests__/  # Testes dos componentes da Home
-└── pages/
-    └── __tests__/      # Testes das páginas
-```
-
-### Componentes Testados
-- **App**: Testes de renderização e estrutura principal
-- **Navbar**: Testes de navegação e elementos
-- **BlogNews**: Testes completos do componente de blog
-- **Home**: Testes da página inicial e seus elementos
-
-### Cobertura de Testes
-- ✅ 34 testes implementados
-- ✅ 100% dos componentes principais testados
-- ✅ Testes de renderização, elementos e funcionalidades
-- ✅ Testes responsivos e acessibilidade
-
-### Testes de Mutação
-- ✅ **Stryker** configurado e executado
-- ✅ **716 mutantes** gerados automaticamente
-- ✅ **Score de Mutação**: 11.23% (86 mutantes sobreviveram)
-- ✅ **Componentes Melhor Testados**:
-  - BlogNews.jsx: 75% de score de mutação
-  - Home.jsx: 42% de score de mutação
-- ✅ **Relatório HTML** gerado em `reports/mutation/html/index.html`
-- ✅ **Análise Detalhada** de mutantes sobreviventes e mortos
-
-## 🔧 Configuração
-
-### ESLint
-Configurado com regras para React e boas práticas de desenvolvimento.
-
-### Vite
-Configuração otimizada para desenvolvimento rápido e build eficiente.
-
-### React Bootstrap
-Framework CSS integrado para componentes responsivos e modernos.
-
-### Testes
-- **Vitest**: Framework de testes rápido e moderno
-- **React Testing Library**: Biblioteca para testar componentes React
-- **Jest DOM**: Matchers adicionais para DOM testing
-- **User Event**: Simulação de interações do usuário
-- **Stryker**: Framework de testes de mutação para qualidade de código
-
-### Docker
-Multi-stage build otimizado para produção com Nginx.
+O projeto é totalmente responsivo e funciona perfeitamente em:
+- 📱 Smartphones
+- 📱 Tablets  
+- 💻 Desktops
+- 🖥️ Monitores grandes
 
 ## 🚀 Deploy
 
-### Desenvolvimento
-```bash
-npm run dev
-```
-
-### Produção Local
+### Build de Produção
 ```bash
 npm run build
+```
+
+### Servir Build
+```bash
 npm run preview
 ```
 
-### Produção com Docker
-```bash
-docker-compose up --build
-```
-
-## 🚀 Funcionalidades Principais
-
-### ✨ Recursos Implementados
-- **Páginas Completas**: 7 páginas com conteúdo específico
-- **Navegação Responsiva**: Menu adaptável para diferentes dispositivos
-- **Componentes Modulares**: Estrutura organizada e reutilizável
-- **Seção de Blog**: Últimas notícias com design moderno
-- **Design Responsivo**: Adaptação para mobile, tablet e desktop
-- **Dados Dinâmicos**: Estrutura modular para fácil atualização
-- **Testes Unitários**: Cobertura completa de testes para componentes
-- **Testes de Mutação**: Análise de qualidade de código com Stryker
-
-### 🎯 Objetivos do Projeto
-- Demonstrar habilidades em React e desenvolvimento web
-- Criar uma aplicação completa e funcional
-- Implementar boas práticas de desenvolvimento
-- Utilizar tecnologias modernas e atuais
-
 ## 📝 Licença
 
-Este projeto é parte do curso "Cursor AI do Básico ao Avançado".
-
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📞 Suporte
-
-Para dúvidas ou suporte, consulte a documentação do curso ou entre em contato através da página de contato da aplicação.
+Este projeto é de uso interno da Nova Código.
 
 ---
 
-**Desenvolvido com ❤️ usando React, Vite e React Bootstrap**
+**Nova Código** - Transformando ideias em soluções digitais que funcionam! 🚀

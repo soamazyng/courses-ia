@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Navbar as BootstrapNavbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar as BootstrapNavbar, Container, Nav } from 'react-bootstrap';
 import novacodigoLogo from '../assets/novacodigo-logo.svg';
 import './Navbar.css';
 
@@ -31,43 +31,7 @@ function Navbar() {
               Home
             </Nav.Link>
             
-            <NavDropdown 
-              title="Serviços" 
-              id="basic-nav-dropdown"
-              className={location.pathname.includes('/desenvolvimento-web') || 
-                        location.pathname.includes('/aplicacoes-mobile') || 
-                        location.pathname.includes('/sistemas-empresariais') || 
-                        location.pathname.includes('/consultoria-ti') ? 'active' : ''}
-            >
-              <NavDropdown.Item 
-                as={Link} 
-                to="/desenvolvimento-web"
-                className={location.pathname === '/desenvolvimento-web' ? 'active' : ''}
-              >
-                💻 Desenvolvimento Web
-              </NavDropdown.Item>
-              <NavDropdown.Item 
-                as={Link} 
-                to="/aplicacoes-mobile"
-                className={location.pathname === '/aplicacoes-mobile' ? 'active' : ''}
-              >
-                📱 Aplicações Mobile
-              </NavDropdown.Item>
-              <NavDropdown.Item 
-                as={Link} 
-                to="/sistemas-empresariais"
-                className={location.pathname === '/sistemas-empresariais' ? 'active' : ''}
-              >
-                ⚡ Sistemas Empresariais
-              </NavDropdown.Item>
-              <NavDropdown.Item 
-                as={Link} 
-                to="/consultoria-ti"
-                className={location.pathname === '/consultoria-ti' ? 'active' : ''}
-              >
-                🏢 Consultoria em TI
-              </NavDropdown.Item>
-            </NavDropdown>
+
             
             <Nav.Link 
               as={Link} 

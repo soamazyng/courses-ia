@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
-import { contatoData } from '../data/contatoData';
 import './Contato.css';
 
 // Schema de validação simplificado
@@ -14,6 +13,39 @@ const schema = yup.object({
 }).required();
 
 function Contato() {
+  // Dados da página Contato
+  const contatoData = {
+    hero: {
+      title: "Entre em Contato",
+      subtitle:
+        "Estamos aqui para ajudar! Entre em contato conosco para discutir seu projeto.",
+    },
+
+    infoItems: [
+      {
+        icon: "📍",
+        title: "Endereço",
+        content:
+          "Av. Paulista, 1000<br />Bela Vista - São Paulo, SP<br />CEP: 01310-100",
+      },
+      {
+        icon: "📞",
+        title: "Telefone",
+        content: "(11) 9999-8888",
+      },
+      {
+        icon: "✉️",
+        title: "Email",
+        content: "contato@novacodigo.com.br",
+      },
+      {
+        icon: "🕒",
+        title: "Horário de Funcionamento",
+        content: "Segunda a Sexta: 9h às 18h",
+      },
+    ],
+  };
+
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 

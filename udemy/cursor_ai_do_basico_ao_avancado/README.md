@@ -22,6 +22,9 @@
     - [🤖 Cursor AI](#-cursor-ai)
     - [🔧 MCP (Model Control Protocol)](#-mcp-model-control-protocol)
     - [💫 Vibe Coding](#-vibe-coding)
+  - [🚀 Projetos Desenvolvidos](#-projetos-desenvolvidos)
+    - [📱 **Projeto 1: Site Institucional Nova Código**](#-projeto-1-site-institucional-nova-código)
+    - [📝 **Projeto 2: Todo List - Organize suas Tarefas**](#-projeto-2-todo-list---organize-suas-tarefas)
   - [📚 Documentação](#-documentação)
     - [📖 Links Oficiais](#-links-oficiais)
     - [🔗 Recursos Adicionais](#-recursos-adicionais)
@@ -60,9 +63,9 @@ O curso tem como principais objetivos:
 | **Cursor AI** | IDE principal com IA integrada |
 | **JavaScript/TypeScript** | Linguagens de programação |
 | **Node.js** | Runtime JavaScript |
-| **React/Vue.js** | Frameworks frontend |
-| **Express.js** | Framework backend |
-| **MongoDB/PostgreSQL** | Bancos de dados |
+| **React 19** | Framework frontend moderno |
+| **React Bootstrap** | Componentes CSS responsivos |
+| **Vite** | Build tool rápida e moderna |
 | **Git** | Controle de versão |
 | **Docker** | Containerização |
 
@@ -128,6 +131,104 @@ Vibe Coding é uma abordagem de programação que utiliza inteligência artifici
 
 ---
 
+## 🚀 Projetos Desenvolvidos
+
+### 📱 **Projeto 1: Site Institucional Nova Código**
+
+Um site institucional completo desenvolvido com **React 19** e **React Bootstrap**, demonstrando as capacidades do Cursor AI na criação de aplicações web modernas.
+
+**✨ Características:**
+- 🏠 **3 Páginas principais**: Home, Sobre e Contato
+- 🎨 **Design responsivo** com Bootstrap
+- 📝 **Formulários validados** com React Hook Form
+- 🔄 **Roteamento** com React Router DOM
+- ⚡ **Build otimizado** com Vite
+
+**📁 Estrutura do Projeto:**
+```
+src/primeiro_projeto/
+├── src/
+│   ├── components/          # Componentes reutilizáveis
+│   │   ├── Navbar.jsx      # Navegação principal
+│   │   └── Home/
+│   │       └── BlogNews.jsx # Componente de notícias
+│   ├── pages/              # Páginas da aplicação
+│   │   ├── Home.jsx        # Página inicial
+│   │   ├── Sobre.jsx       # Sobre a empresa
+│   │   └── Contato.jsx     # Formulário de contato
+│   └── assets/             # Recursos estáticos
+├── package.json            # Dependências e scripts
+└── vite.config.js         # Configuração do Vite
+```
+
+**🛠️ Tecnologias Utilizadas:**
+- React 19 + React DOM
+- React Bootstrap + Bootstrap Icons
+- React Router DOM para navegação
+- React Hook Form + Yup para validação
+- Vite para build e desenvolvimento
+- ESLint para qualidade de código
+
+**🚀 Como Executar:**
+```bash
+cd src/primeiro_projeto
+npm install
+npm run dev
+```
+
+---
+
+### 📝 **Projeto 2: Todo List - Organize suas Tarefas**
+
+Uma aplicação web moderna e responsiva para gerenciamento de tarefas, construída com **HTML, CSS e JavaScript puro**, demonstrando o desenvolvimento frontend sem frameworks.
+
+**✨ Características:**
+- 🎨 **Interface moderna** com design limpo e animações suaves
+- 📱 **Totalmente responsiva** para todos os dispositivos
+- 💾 **Persistência local** com localStorage automático
+- 🔍 **Sistema de filtros** (todas, pendentes, concluídas)
+- 🚨 **Detecção automática de prioridade** baseada no texto
+- 🔔 **Notificações visuais** para todas as ações
+- ⌨️ **Atalhos de teclado** para navegação rápida
+- ♿ **Acessibilidade completa** para leitores de tela
+
+**📁 Estrutura do Projeto:**
+```
+src/todo/
+├── index.html          # Estrutura HTML principal
+├── styles.css          # Estilos CSS responsivos
+├── script.js           # Lógica JavaScript (classe TodoList)
+└── README.md           # Documentação do projeto
+```
+
+**🛠️ Tecnologias Utilizadas:**
+- HTML5 semântico e acessível
+- CSS3 com variáveis CSS e flexbox
+- JavaScript ES6+ (classe TodoList)
+- Font Awesome para ícones
+- LocalStorage para persistência
+
+**🚀 Como Executar:**
+```bash
+cd src/todo
+# Abra o arquivo index.html em qualquer navegador
+# Ou use um servidor local:
+python -m http.server 8000
+# ou
+npx serve .
+```
+
+**🌟 Funcionalidades Principais:**
+- ✅ Adicionar, editar, excluir e marcar tarefas
+- 🔄 Filtros por status (todas, pendentes, concluídas)
+- 💾 Backup e restauração de dados (JSON)
+- 🎯 Detecção automática de prioridade
+- 📊 Contadores em tempo real
+- 🗑️ Gerenciamento de storage
+- ⌨️ Atalhos de teclado (Enter, Escape, Ctrl+K)
+
+---
+
 ## 📚 Documentação
 
 ### 📖 Links Oficiais
@@ -161,10 +262,10 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👨‍💻 Autor
 
-**Jay Benedicto** - Desenvolvedor e instrutor do curso
+**Jay Benedicto** - Engenheira de Software
 
-- 🔗 **LinkedIn:** [seu-linkedin]
-- 🐙 **GitHub:** [seu-github]
+- 🔗 **LinkedIn:** [https://www.linkedin.com/in/soamazing/](https://www.linkedin.com/in/soamazing/)
+- 🐙 **GitHub:** [https://github.com/soamazyng/](https://github.com/soamazyng/)
 
 ---
 

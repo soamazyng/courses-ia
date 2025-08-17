@@ -1,37 +1,66 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import { homeData } from '../data/homeData';
 import BlogNews from '../components/Home/BlogNews';
 import './Home.css';
 
 function Home() {
+  // Dados da página Home
+  const homeData = {
+    hero: {
+      title: "Bem-vindo à Nova Código",
+      subtitle:
+        "Transformando ideias em realidade através do desenvolvimento de software inovador e soluções digitais de alta qualidade",
+    },
+
+    features: [
+      {
+        icon: "💻",
+        title: "Desenvolvimento Web",
+        description: "Sites responsivos, aplicações web modernas e sistemas complexos com as melhores tecnologias",
+      },
+      {
+        icon: "📱",
+        title: "Apps Mobile",
+        description: "Aplicações nativas e híbridas para iOS e Android com experiência de usuário excepcional",
+      },
+      {
+        icon: "⚡",
+        title: "Sistemas Empresariais",
+        description: "Soluções personalizadas para otimizar processos e aumentar a eficiência do seu negócio",
+      },
+    ],
+
+    stats: [
+      { value: "100+", label: "Projetos Entregues" },
+      { value: "25+", label: "Desenvolvedores" },
+      { value: "6+", label: "Anos de Experiência" },
+      { value: "50+", label: "Clientes Satisfeitos" },
+    ],
+  };
+
   const servicos = [
     {
-      title: "Desenvolvimento Web",
-      description: "Criamos sites responsivos, aplicações web modernas e sistemas complexos com as melhores tecnologias do mercado.",
+      title: "Sites e Aplicações Web",
+      description: "Criamos sites responsivos e aplicações web modernas que funcionam perfeitamente em qualquer dispositivo.",
       icon: "💻",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&h=400&q=80",
       tecnologias: ["React", "Node.js", "Python", "Laravel", "Vue.js"]
     },
     {
-      title: "Aplicações Mobile",
-      description: "Desenvolvemos apps nativos e híbridos para iOS e Android com experiência de usuário excepcional.",
+      title: "Apps para Celular",
+      description: "Desenvolvemos aplicativos para iPhone e Android que seus clientes vão adorar usar.",
       icon: "📱",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&h=400&q=80",
       tecnologias: ["React Native", "Flutter", "Swift", "Kotlin"]
     },
     {
-      title: "Sistemas Empresariais",
-      description: "Soluções personalizadas para otimizar processos internos e aumentar a eficiência do seu negócio.",
+      title: "Sistemas para Empresas",
+      description: "Criamos sistemas personalizados que organizam e automatizam os processos da sua empresa.",
       icon: "⚡",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&h=400&q=80",
       tecnologias: ["Java", "Spring", "C#", ".NET", "PostgreSQL"]
     },
     {
-      title: "Consultoria em TI",
-      description: "Análise, arquitetura e planejamento de soluções tecnológicas para impulsionar seu negócio.",
+      title: "Consultoria e Planejamento",
+      description: "Ajudamos você a escolher as melhores tecnologias e planejar como a tecnologia pode melhorar seu negócio.",
       icon: "🏢",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&h=400&q=80",
       tecnologias: ["Arquitetura", "DevOps", "Cloud", "AWS", "Azure"]
     }
   ];
@@ -74,27 +103,20 @@ function Home() {
         {/* Seção de Serviços */}
         <Row className="g-4 mb-5">
           <Col>
-            <h2 className="text-center mb-5">Nossos Principais Serviços</h2>
+            <h2 className="text-center mb-4">Como Podemos Ajudar Você</h2>
             <Row className="g-4">
               {servicos.map((servico, index) => (
                 <Col key={index} lg={6}>
-                  <Card className="h-100 service-card">
-                    <div className="service-image-container">
-                      <img 
-                        src={servico.image} 
-                        alt={servico.title}
-                        className="service-image"
-                      />
-                      <div className="service-icon-overlay">
-                        <span className="service-icon">{servico.icon}</span>
+                  <Card className="h-100 service-card text-center">
+                    <Card.Body>
+                      <div className="service-icon mb-3">
+                        <span className="display-4">{servico.icon}</span>
                       </div>
-                    </div>
-                    <Card.Body className="d-flex flex-column">
                       <h3 className="h4 mb-3">{servico.title}</h3>
-                      <p className="text-muted mb-3 flex-grow-1">{servico.description}</p>
+                      <p className="text-muted mb-3">{servico.description}</p>
                       <div className="service-technologies">
                         {servico.tecnologias.map((tech, techIndex) => (
-                          <Badge key={techIndex} bg="primary" className="me-1 mb-1">
+                          <Badge key={techIndex} bg="light" text="dark" className="me-1 mb-1">
                             {tech}
                           </Badge>
                         ))}
